@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arun Kumar - Web Developer Portfolio</title>
+    <link rel="stylesheet" href="portfolio.css"/>
+    
+</head>
+
+<body>
+
+    <header>
+        <h1>Welcome to Arun Kumar's Portfolio</h1>
+        <p>Web Developer | Designer | Problem Solver</p>
+    </header>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#skills">My Skills</a>
+        <a href="#projects">My Projects</a>
+        <a href="#contact">Get In Touch</a>
+    </nav>
+
+    <main>
+
+        <section id="about" class="section1">
+            <h2>About Me</h2>
+
+            <p>Hi there! I'm Your Name, and I'm passionate about creating amazing web experiences. I love solving
+                problems with code and bringing creative ideas to life through technology.</p>
+            <p>When I'm not coding, you can find me [add your hobbies here - reading, hiking, playing games, etc.]. I
+                believe that great websites combine beautiful design with powerful functionality.</p>
+        </section>
+        <section id="skills" class="section2">
+            <h2>My Skills</h2>
+
+            <!-- <table border="3" style="width: 80%;margin:auto;border-collapse: collapse;"> -->
+            <table>
+                <thead>
+                    <tr>
+                        <th>Technology</th>
+                        <th>Skill Level</th>
+                        <th>Experience</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>HTML5 Boilerplate</td>
+                        <td>Intermediate</td>
+                        <td>5 year</td>
+                    </tr>
+                    <tr>
+                        <td>CSS3 structural Layer</td>
+                        <td>Moderate</td>
+                        <td>3 year</td>
+                    </tr>
+                    <tr>
+                        <td>JavaScript DOM</td>
+                        <td>Moderate</td>
+                        <td>4 year</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="projects" class="section1">
+            <h2>My Projects</h2>
+            <article class="project-card">
+                <h3>Personal Portfolio Website</h3>
+                <p>My very first website built with HTML5! Features semantic markup, responsive design, and modern web
+                    standards.</p>
+                <p><strong>Technologies: </strong><span>HTML5, CSS3</span></p>
+
+                <p><strong>Status: </strong><span>Completed today!</span></p>
+            </article>
+            <article class="project-card">
+                <h3>Future Project #1</h3>
+                <p>An exciting project I'm planning to build next. It will showcase my growing skills in web
+                    development.</p>
+                <p><strong>Technologies: </strong><span>HTML5, CSS3, JavaScript</span></p>
+                <p><strong>Status: </strong><span>Coming soon...</span></p>
+
+            </article>
+        </section>
+                <section id="contact" class="section2">
+            <h2>Get In Touch</h2>
+            <form action="#" method="post">
+              
+                <div>
+                    <label for="name" >Your Name:</label>
+                    <input type="text" id="name" placeholder="arun kumar"  required />
+                </div>
+                <div>
+                    <label for="email" >Email address</label>
+                    <input type="email" id="email" placeholder="name@example.com" required/>
+                </div>
+                <div id="gender-container">
+                    <label class="gender-label" for="male" >Male: </label>
+                    <input type="radio" id="male" name="gender"/>
+
+                    <label class="gender-label" for="female" >Female: </label>
+                    <input type="radio" id="female" name="gender"/>
+
+                </div>
+                <div>
+                    <label for="subject" >Subject:</label>
+                    <select id="subject" name="subject">
+                        <option value="project">New Project</option>
+                        <option value="question">Question</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="message" >Your message:</label>
+                    <textarea id="message" name="message" row="7" required></textarea>
+                </div>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+
+
+    </main>
+
+</body>
+
+</html>
