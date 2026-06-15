@@ -17,17 +17,18 @@ let board = [
 ]
 
 let winningPattern = [
-    [0, 1, 2],
-    [3, 4, 5],
-    [6, 7, 8],
+    [0,1,2],
+    [3,4,5],
+    [6,7,8],
 
-    [0, 3, 6],
-    [1, 4, 7],
-    [2, 5, 8],
+    [0,3,6],
+    [1,4,7],
+    [2,5,8],
 
-    [0, 4, 8],
-    [2, 4, 6]
+    [0,4,8],
+    [2,4,6]
 ]
+
 
 
 let currentPlayer = "X";
@@ -53,7 +54,7 @@ function resetBoard() {
         cell.classList.remove("x", "o");
     })
     let randomeVal = parseInt(Math.random() * 10) % 2;
-    console.log("Random: " + randomeVal)
+    console.log("Random: "+randomeVal)
     if (randomeVal == 0) {
         currentPlayer = "X";
     } else {
@@ -61,10 +62,6 @@ function resetBoard() {
     }
     gameActive = true;
     updateStatus();
-
-    localStorage.removeItem("ticTacToeScore")
-    updateScoreboard();
-
 }
 
 function handleCellClick(event) {
@@ -112,26 +109,24 @@ function updateStatus() {
     gameStatus.innerText = "Player " + currentPlayer + " Turn"
 }
 
-function checkWinner() {
-    winningPattern.forEach(function (pattern) {
+function checkWinner(){
+    winningPattern.forEach(function(pattern){
         let a = pattern[0];
         let b = pattern[1];
         let c = pattern[2];
-
-        if (board[a] === "") {
-
-        } else if (board[a] !== "" && board[a] === board[b] && board[b] === board[c]) {
+        
+        if(board[a] === ""){
+            
+        } else if(board[a] !== "" && board[a]===board[b] && board[b]===board[c] ){
             gameActive = false;
-            gameStatus.textContent = "Player " + board[a] + " wins.";
-            if (board[a] === "X") {
+            gameStatus.textContent = "Player "+board[a]+" wins.";
+            if(board[a]==="X"){
                 playerXScore++;
             } else {
                 playerOScore++;
             }
             totalMatches++;
-            loadScores();
             updateScoreboard();
-            saveScores()
 
             return;
         }
@@ -139,59 +134,29 @@ function checkWinner() {
     });
 }
 
-function checkDraw() {
+function checkDraw(){
     console.log("checking")
     let isDraw = true;
-    for (let i = 0; i < board.length; i++) {
-        if (board[i] === "") {
+    for(let i=0;i<board.length;i++){
+        if(board[i]===""){
             isDraw = false;
         }
     }
-    if (isDraw == true && gameActive) {
+    if(isDraw == true && gameActive){
         console.log("Draw")
         gameActive = false;
         gameStatus.textContent = "Match Draw!";
         drawScore++;
         totalMatches++;
-        loadScores();
         updateScoreboard();
-        saveScores();
-    }
+    } 
 }
 
-function updateScoreboard() {
+function updateScoreboard(){
     playerXScoreElement.innerText = playerXScore;
     drawScoreElement.innerText = drawScore;
     playerOScoreElement.innerText = playerOScore;
     totalMatchesElement.innerText = totalMatches;
 }
 
-
-function saveScores() {
-
-    // json
-    let scoreData = {
-        "playerXScore": playerXScore,
-        "drawScore": drawScore,
-        "playerOScore": playerOScore,
-        "totalMatches": totalMatches
-    }
-
-    localStorage.setItem("ticTacToeScore", JSON.stringify(scoreData))
-}
-
-
-function loadScores(){
-    let storedData = localStorage.getItem("ticTacToeScore");
-
-    if(storedData){
-        storedData = JSON.parse(storedData);
-        playerXScore = storedData.playerXScore;
-        drawScore = storedData.drawScore;
-        playerOScore = storedData.playerOScore;
-        totalMatches = storedData.totalMatches;
-    }
-}
-
-loadScores()
-updateScoreboard()
+updateScoreboard();

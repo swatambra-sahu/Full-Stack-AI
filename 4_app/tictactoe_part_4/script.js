@@ -30,6 +30,7 @@ let winningPattern = [
 ]
 
 
+
 let currentPlayer = "X";
 
 let gameActive = true;
