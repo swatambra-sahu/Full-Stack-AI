@@ -1,37 +1,22 @@
-import Cart from "./pages/Cart";
-import Checkout from "./pages/Checkout";
-import Home from "./pages/Home";
-import ProfuctDetails from "./pages/ProductDetail";
-
-import { ThemeProvider, useTheme } from "./context/ThemeContext";
-import { Link, Route, Routes } from "react-router-dom";
-
-function App(){
-
-    return (
-        <div>
-
-            <header>
-                <a href="/">Home</a> |
-                <a href="/cart">Cart</a>
-                <hr/>
-                <Link to="/">QuickStart</Link> | 
-                <Link to="/cart">Cart</Link>
-            </header>
-
-
-        <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/product/:id" element={<ProfuctDetails/>}/>
-            <Route path="/cart" element={<Cart/>}/>
-            <Route path="/checkout" element={<Checkout/>}/>
-        </Routes>
-            {/* <Home/>
-            <Cart/>
-            <Checkout/> */}
-
-        </div>
-    )
-}
-
-export default App;
+import { Routes, Route } from 'react-router-dom';  
+import { ThemeProvider } from './context/ThemeContext';  
+import Navbar from './components/Navbar';  
+import Home from './pages/Home';  
+import ProductDetail from './pages/ProductDetail';  
+import Cart from './pages/Cart';  
+import Checkout from './pages/Checkout';  
+  
+export default function App() {  
+  return (  
+    <ThemeProvider>  
+      <Navbar />  
+      <Routes>  
+        <Route path="/" element={<Home />} />  
+        <Route path="/product/:id" element={<ProductDetail />} />  
+        <Route path="/cart" element={<Cart />}>  
+          <Route path="checkout" element={<Checkout />} />  
+        </Route>  
+      </Routes>  
+    </ThemeProvider>  
+  );  
+}  
