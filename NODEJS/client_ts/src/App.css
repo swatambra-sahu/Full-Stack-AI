@@ -1,0 +1,73 @@
+body {  
+  font-family: Arial, sans-serif;  
+  background-color: #f5f5f5;  
+  margin: 0;  
+}  
+  
+.navbar {  
+  display: flex;  
+  align-items: center;  
+  gap: 16px;  
+  background-color: #1f2937;  
+  color: white;  
+  padding: 16px 24px;  
+}  
+  
+.navbar h1 {  
+  margin: 0;  
+  flex-grow: 1;  
+}  
+  
+.navbar button {  
+  padding: 8px 16px;  
+  cursor: pointer;  
+}  
+  
+.job-list {  
+  padding: 24px;  
+}  
+  
+.job-card {  
+  background: white;  
+  border: 1px solid #ddd;  
+  border-radius: 6px;  
+  padding: 16px;  
+  margin-bottom: 12px;  
+  cursor: pointer;  
+}  
+  
+.job-card:hover {  
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);  
+}  
+  
+.company-name {  
+  color: #555;  
+}  
+  
+.skill-tag {  
+  display: inline-block;  
+  background-color: #e0e7ff;  
+  color: #1f2937;  
+  padding: 4px 10px;  
+  border-radius: 12px;  
+  margin-right: 6px;  
+  font-size: 13px;  
+}  
+  
+.job-detail, .candidate-profile {  
+  padding: 24px;  
+  background: white;  
+  margin: 24px;  
+  border-radius: 6px;  
+}  
+  
+.note {  
+  font-style: italic;  
+  color: #777;  
+}  
+  
+textarea {  
+  width: 100%;  
+  font-family: inherit;  
+  padding: 8px;  
+}  

@@ -1,0 +1,7 @@
+fs.readFileSync(path[, options])
+fs.readFile(path[, options])
+
+fs.writeFileSync(path[, options])
+fs.writeFile(path[, options])
+
+
