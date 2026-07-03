@@ -92,14 +92,14 @@ exports.updateResume = async (req, res) => {
         
         // req -> res
         // candiate -> update
-        // const resumeText = req.body.resumeText;
-        // const candidate = await Candidate.findByIdAndUpdate(
-        //     req.user.id,
-        //     {resumeText: resumeText},
-        //     {new: true}
-        // );
-        // res.json(candidate);
-        res.json({"success": true})
+        const resumeText = req.body.resumeText;
+        const candidate = await Candidate.findByIdAndUpdate(
+            req.user.id,
+            {resumeText: resumeText},
+            {new: true}
+        );
+        res.json(candidate);
+        // res.json({"success": true})
     } catch (err) {
         return res.status(500).json({ error: "Resume update failed.", err })
     }

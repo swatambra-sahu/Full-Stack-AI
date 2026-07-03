@@ -9,6 +9,6 @@ router.post("/apply",verifyToken, applyToJob)
 router.get("/me",verifyToken, getMyProfile)
 
 router.get("/match", verifyToken, evaluateMatch)
-router.post("/me/resume", verifyToken, updateResume)
+router.patch("/me/resume", verifyToken, updateResume)
 
 module.exports = router
