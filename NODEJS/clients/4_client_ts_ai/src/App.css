@@ -340,6 +340,10 @@ h1, h2, h3 {
 
 
 
+/* ------------------------------------------------------------
+   12. AUTH
+   Login, Signup, PostJob pages.
+   ------------------------------------------------------------ */
 
 
 .auth-form, .post-job{
@@ -375,3 +379,28 @@ h1, h2, h3 {
   text-decoration: underline;
   cursor: pointer;
 }
+
+
+
+/* ------------------------------------------------------------
+   13. AI
+   ------------------------------------------------------------ */
+
+.ai-loading {  
+  font-style: italic;  
+  color: #555;  
+}  
+  
+.match-result {  
+  background-color: #ecfdf5;  
+  border: 1px solid #6ee7b7;  
+  border-radius: 6px;  
+  padding: 16px;  
+  margin-top: 16px;  
+}  
+  
+.match-score {  
+  font-size: 24px;  
+  font-weight: bold;  
+  color: #047857;  
+}  

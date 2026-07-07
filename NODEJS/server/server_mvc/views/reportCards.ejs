@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Cards</title>
+    <link rel="stylesheet" href="/style.css"/>
+</head>
+<body>
+    <div class="container">
+        <h2>All Student Report Card</h2>
+       
+        <% if(students.length==0) { %>
+                <p>No students added yet.
+                    <a href="/students/add">Add the first student.</a>
+                </p>
+        <% } else { %>
+            <table>
+                <thead>
+                    <tr>
+                        <th>S.No</th>
+                        <th>Student Name</th>
+                        <th>Maths</th>
+                        <th>Science</th>
+                        <th>English</th>
+                        <th>Average</th>
+                        <th>Total</th>
+                        <th>Grade</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% students.forEach((std, index)=>{ %>
+                    <tr>
+                        <td><%= index+1 %></td>
+                        <td><%= std.name %></td>
+                        <td><%= std.maths %></td>
+                        <td><%= std.science %></td>
+                        <td><%= std.english %></td>
+                        <td><%= std.average %></td>
+                        <td><%= std.total %></td>
+                        <td><%= std.grade %></td>
+                    </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+        <% } %>
+    </div>
+
+    <br/>
+    <a href="/students/add">Add another student</a>
+    <a href="/">Home</a>
+</body>
+</html>

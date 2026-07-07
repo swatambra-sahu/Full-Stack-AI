@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";  
 import JobCard from "../components/JobCard";  
 import { Job } from "../types";  
-  
+import {server_api} from "./../data/api";
+
 interface JobListProps {  
   onSelectJob: (jobId: string) => void;  
   token:string;
@@ -13,7 +14,7 @@ function JobList({ token, onSelectJob }: JobListProps) {
   const [error, setError] = useState<string | null>(null);  
   
   useEffect(() => {  
-    fetch("http://localhost:3000/api/jobs", {
+    fetch(server_api+"/api/jobs", {
       // method: 'get',
       headers: {
           'Authorization': 'Bearer '+token

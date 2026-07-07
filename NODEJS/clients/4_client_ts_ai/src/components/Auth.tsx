@@ -1,5 +1,6 @@
 import {useState} from 'react';
 import { AuthUser } from "../types"
+import {server_api} from "./../data/api";
 
 interface AuthProps{
     onLoginSuccess: (token:string,user:AuthUser)=>void; 
@@ -22,7 +23,7 @@ function Auth({onLoginSuccess}: AuthProps){
         const reqBody = isSignup?{name, email, password, role}:{email, password};
         
         try{
-            const api = `http://localhost:3000/api/auth/${endpoint}`
+            const api = `${server_api}/api/auth/${endpoint}`
             const res = await fetch(api, {
                 method: 'POST',
                 headers: {'Content-Type': 'application/json'},

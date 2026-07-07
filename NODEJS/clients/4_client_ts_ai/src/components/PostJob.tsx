@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import {server_api} from "./../data/api";
 
 interface PostJobProps{
     token:string;
@@ -24,7 +25,7 @@ function PostJob({token, onPosted}: PostJobProps){
         e.preventDefault();
 
         setError("")
-        const api = 'http://localhost:3000/api/jobs';
+        const api = server_api+'/api/jobs';
         const reqBody = {
             title, 
             company, 

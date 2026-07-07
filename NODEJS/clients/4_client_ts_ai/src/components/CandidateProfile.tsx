@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";  
 import candidate from "../data/candidate";  
 import { Candidate } from "../types";
-
+import {server_api} from "./../data/api";
 interface CandidateProfileProps{
   token: string;
 }
@@ -10,7 +10,7 @@ function CandidateProfile({token}: CandidateProfileProps) {
   
     // constructor
     useEffect(() => {
-      fetch(`http://localhost:3000/api/candidate/me`, {
+      fetch(`${server_api}/api/candidate/me`, {
         // method: 'get',
         headers: {
           'Authorization': 'Bearer '+token
@@ -37,9 +37,11 @@ function CandidateProfile({token}: CandidateProfileProps) {
 <ul>
       {
         profile.applications.map(
-          (app, index)=> {return <li key={index}>
-          JobId: {app.jobId} - Status: {app.status} - MatchScore: {app.matchScore??"Not yet evaluated"}
-        </li>
+          (app, index)=> {return (
+            <li key={index}>
+              JobId: {app.jobId} - Status: {app.status} - MatchScore: {app.matchScore??"Not yet evaluated"} - AI Feedback: <span>{app.aiFeedback??""}</span>
+            </li>
+            )
           }
         )
       } 
