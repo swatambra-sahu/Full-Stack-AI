@@ -1,0 +1,9 @@
+You must have an application
+You must have server to deploy application
+
+manual test
+
+    chmod 400 keypair.pem - one time activity
+
+    ssh -i "~/Downloads/AWS_KP.pem" ubuntu@ec2-100-54-72-27.compute-1.amazonaws.com
+    ssh -i "~/DownloadsAWS_KP.pem" ubuntu@100.54.72.27
