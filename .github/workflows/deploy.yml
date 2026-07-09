@@ -17,5 +17,6 @@ jobs:
           username: ubuntu
           script: |
             git pull origin main 
+            cd /home/ubuntu/mern-fullstack-development/NODEJS/server/server_mvc
             npm i 
             npm run start
